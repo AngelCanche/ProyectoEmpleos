@@ -11,6 +11,7 @@ import net.ininajero.empleo.model.Categoria;
 
 
 @Service
+//@Primary
 public class CategoriasServiceImpl implements ICategoriasServise{
 
 private List<Categoria> lista = null;

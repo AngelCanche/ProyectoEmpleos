@@ -1,12 +1,11 @@
 package net.ininajero.empleo.controller;
 
-
-
 import java.text.SimpleDateFormat;  
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -43,6 +42,7 @@ public class VacantesController {
 	private IVacantesService serviceVacantes;
 	
 	@Autowired
+	//@Qualifier("categoriasServiceJpa")
 	private ICategoriasServise serviceCategoria;
 	
 	
