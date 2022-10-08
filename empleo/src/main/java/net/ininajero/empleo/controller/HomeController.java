@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import net.ininajero.empleo.model.Vacante;
 import net.ininajero.empleo.service.IVacantesService;
@@ -59,9 +60,14 @@ public class HomeController {
 
 	@GetMapping ("/")
 	public String mostrarHome(Model model) {
-		List<Vacante> lista = serviceVacantes.BuscarTodas();
-		model.addAttribute("vacantes", lista);
+		//List<Vacante> lista = serviceVacantes.BuscarTodas();
+		//model.addAttribute("vacantes", lista);
 		return "home";
+	}
+	
+	@ModelAttribute
+	public void setGenericos(Model model) {
+		model.addAttribute("vacantes", serviceVacantes.buscarDestacadas());
 	}
 	
 	
