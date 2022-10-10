@@ -3,6 +3,8 @@ package net.ininajero.empleo.service;
 import java.util.LinkedList;  
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Service;
 
@@ -114,6 +116,14 @@ for(Categoria c : lista) {
 	public void eliminar(Integer idCategoria) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+
+	@Override
+	public Page<Categoria> buscarTodas(Pageable page) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

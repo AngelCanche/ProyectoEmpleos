@@ -2,7 +2,11 @@ package net.ininajero.empleo.service;
 
 import java.util.List;
 
-import net.ininajero.empleo.model.Categoria; 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import net.ininajero.empleo.model.Categoria;
+
 
 
 public interface ICategoriasServise {
@@ -10,5 +14,5 @@ public interface ICategoriasServise {
    List<Categoria> buscarTodas();
 	Categoria buscarPorId(Integer idCategoria);
    void eliminar(Integer idCategoria);
-		
+   Page<Categoria>buscarTodas(Pageable page);
 }
