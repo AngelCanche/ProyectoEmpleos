@@ -34,11 +34,18 @@ public class CategoriasServiceJpa implements ICategoriasServise {
 	@Override
 	public Categoria buscarPorId(Integer idCategoria) {
 		// TODO Auto-generated method stub
-		Optional<Categoria> optinal = categoriasRepo.findById(idCategoria);
-		if(optinal.isPresent()) {
-			return optinal.get();
+		Optional<Categoria> optional = categoriasRepo.findById(idCategoria);
+		if(optional.isPresent()) {
+			return optional.get();
 		}
 		return null;
+	}
+
+	@Override
+	public void eliminar(Integer idCategoria) {
+		// TODO Auto-generated method stub
+		categoriasRepo.deleteById(idCategoria);
+		
 	}
 
 }
