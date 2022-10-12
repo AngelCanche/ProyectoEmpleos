@@ -34,6 +34,12 @@ public class DataWebSecurity extends WebSecurityConfigurerAdapter {
 	"/images/**",
 	"/tinymce/**",
 	"/logos/**").permitAll()
+	
+	// Asignar permisos a URLs por ROLES
+	.antMatchers("/vacantes/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR")
+	.antMatchers("/categorias/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR") 
+	.antMatchers("/usuarios/**").hasAnyAuthority("ADMINISTRADOR")
+
 	// Las vistas públicas no requieren autenticación
 	.antMatchers("/", 
 	"/signup",
