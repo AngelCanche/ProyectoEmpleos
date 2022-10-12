@@ -28,4 +28,12 @@ public class UsuariosServiceImpl implements IUsuariosService {
 		
 	}
 
+
+
+	@Override
+	public Usuario buscarPorUsername(String Username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
